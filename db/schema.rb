@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150513062421) do
+ActiveRecord::Schema.define(version: 20150514055124) do
 
   create_table "autobots", force: :cascade do |t|
     t.float    "speed",               limit: 24

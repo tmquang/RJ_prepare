@@ -4,19 +4,6 @@ module API
       include API::V1::Defaults
 
       resource :runners do
-        desc 'Update image'
-        params do
-          requires :file, type: Rack::Multipart::UploadedFile, desc: "ex: quang"
-        end
-        post 'upload' do
-          # # filename = params[:file][:filename]
-          # # content_type 'application/octet-stream'
-          # # env['api.format'] = :binary # there's no formatter for :binary, data will be returned "as is"
-          # # header 'Content-Disposition', "attachment; filename*=UTF-8''#{URI.escape(filename)}"
-          # # params[:file][:tempfile].read
-          # new_file = ActionDispatch::Http::UploadedFile.new(params[:file])
-        end
-
         desc "Create runner"
         params do
           requires :full_name, type: String, desc: "ex: quang"

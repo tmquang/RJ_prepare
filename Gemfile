@@ -47,5 +47,8 @@ gem 'grape-entity', '~> 0.4.5'
 gem 'grape-swagger', '~> 0.10.1'
 gem 'grape-swagger-rails', '~> 0.1.0'
 
+# oauth2
+gem 'doorkeeper'
+
 gem 'gcm'
 gem "paperclip", "~> 4.2"

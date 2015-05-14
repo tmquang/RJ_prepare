@@ -1,3 +1,4 @@
+require 'doorkeeper/grape/helpers'
 require 'gcm'
 
 module API
@@ -9,6 +10,8 @@ module API
         # common Grape settings
         version 'v1'
         format :json
+
+        helpers Doorkeeper::Grape::Helpers
 
         # global handler for simple not found case
         rescue_from ActiveRecord::RecordNotFound do |e|
@@ -27,8 +30,7 @@ module API
 
         # HTTP header based authentication
         before do
-          api_config = YAML.load_file("#{Rails.root}/config/api.yml")
-          error!('Unauthorized', 401) unless headers['Authorization'] == api_config["authorization"]
+          doorkeeper_authorize!
         end
       end
     end
