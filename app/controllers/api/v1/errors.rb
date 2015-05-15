@@ -1,7 +1,7 @@
 module API
   module V1
     class Errors < Grape::API
-      include API::V1::Defaults
+      include API::V1::Authenticated
 
       resource :errors do
         desc "Return error info"

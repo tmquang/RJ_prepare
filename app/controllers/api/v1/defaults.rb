@@ -27,11 +27,6 @@ module API
             error_response(message: "Internal server error", status: 500)
           end
         end
-
-        # HTTP header based authentication
-        before do
-          doorkeeper_authorize!
-        end
       end
     end
   end

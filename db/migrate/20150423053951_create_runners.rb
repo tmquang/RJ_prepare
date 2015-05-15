@@ -4,7 +4,7 @@ class CreateRunners < ActiveRecord::Migration
       t.string :full_name
       t.string :email
       t.integer :age
-      t.string :password
+      t.string :password_digest
       t.string :country
       t.string :registration_id
       t.string :notification_key

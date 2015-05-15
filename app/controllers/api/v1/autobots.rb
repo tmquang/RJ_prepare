@@ -1,7 +1,7 @@
 module API
   module V1
     class Autobots < Grape::API
-      include API::V1::Defaults
+      include API::V1::Authenticated
 
       resource :autobots do
         desc "Create autobot"
@@ -50,8 +50,6 @@ module API
           [200, 'Ok', Entities::Autobot],
           ['400 - e3', ErrorCodes.get('e3')[:message], Entities::Errors]
         ] do
-          doorkeeper_token.resource_owner_id
-
           autobot = Autobot.find_by(id: params[:autobot_id])
 
           # check exists
